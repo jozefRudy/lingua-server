@@ -107,12 +107,6 @@ curl http://localhost:3030/health
 
 ## Building and Running
 
-### With Docker Compose (recommended for development):
-
-```bash
-docker compose up lingua
-```
-
 ### Standalone Docker:
 
 ```bash
@@ -132,7 +126,7 @@ The service always listens on port 3030.
 
 ### Optimized Configuration
 
-- **Languages**: English, French, German, Spanish (4 total)
+- **Languages**: English, French, German, Spanish (4 total) to distinguish between english/non-english in many languages (see tests)
 - **Minimum relative distance**: 0.4 (prevents uncertain detections)
 - **English threshold**: Confidence > 0.5
 - **Accuracy**: 100% on test cases (verified by `cargo test`)
