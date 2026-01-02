@@ -43,9 +43,29 @@ High-precision English language detection (batch processing).
 
 Health check endpoint. Returns "OK".
 
-## Local Testing
+## Development
 
-### Using curl:
+### Using devenv (recommended)
+
+This project uses [devenv](https://devenv.sh/) to provide a fully reproducible development environment.
+
+#### 1. Enter the development shell:
+```bash
+devenv shell
+```
+
+#### 2. Run the server:
+```bash
+cargo run
+```
+
+#### 3. Run automated tests:
+```bash
+cargo test
+```
+These tests reside in `tests/integration_tests.rs` and cover 40+ validation cases.
+
+### Local Testing (Manual)
 
 #### English Detection
 
@@ -111,4 +131,4 @@ The service always listens on port 3030.
 - **Languages**: English, French, German, Spanish (4 total)
 - **Minimum relative distance**: 0.4 (prevents uncertain detections)
 - **English threshold**: Confidence > 0.5
-- **Accuracy**: 100% on test cases (14/14 correct)
+- **Accuracy**: 100% on test cases (verified by `cargo test`)
