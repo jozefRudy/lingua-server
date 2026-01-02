@@ -4,7 +4,7 @@ High-precision English language detection microservice using optimized Lingua-rs
 
 ## Features
 
-- **Optimized for English detection**: 4 languages (English, French, German, Spanish)
+- **Optimized for English detection**: true/false
 - **High precision**: Minimum relative distance 0.4 prevents uncertain detections
 - **Confidence threshold**: > 0.5 for reliable English classification
 - **Thread-safe**: Suitable for concurrent requests
@@ -27,7 +27,7 @@ High-precision English language detection (batch processing).
 
 ```json
 {
-  "results": [{"is_english": true}]
+  "results": [{ "is_english": true }]
 }
 ```
 
@@ -35,7 +35,7 @@ High-precision English language detection (batch processing).
 
 ```json
 {
-  "results": [{"is_english": false}]
+  "results": [{ "is_english": false }]
 }
 ```
 
@@ -50,19 +50,23 @@ Health check endpoint. Returns "OK".
 This project uses [devenv](https://devenv.sh/) to provide a fully reproducible development environment.
 
 #### 1. Enter the development shell:
+
 ```bash
 devenv shell
 ```
 
 #### 2. Run the server:
+
 ```bash
 cargo run
 ```
 
 #### 3. Run automated tests:
+
 ```bash
 cargo test
 ```
+
 These tests reside in `tests/integration_tests.rs` and cover 40+ validation cases.
 
 ### Local Testing (Manual)
